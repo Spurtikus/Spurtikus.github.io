@@ -1,15 +1,19 @@
 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 <br> <br>
 
-"Hello KARINA"
-<button type="button" name="btnCounterIncrease">Counter Increase</button>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cnMa-Sm9H4k"
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
-clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>
+"Hello KARINA And Luca and Brittany!!!!"
+<input type="button" id="btnCounterIncrease" value = "Counter Increase" onclick="increaseLabel()"/>
 
 <br>
+<br>
 
+<input type="button" id="btnLoadImage" value = "Load Brittany" onclick="loadBrittany()"/>
+
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/cnMa-Sm9H4k"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe> -->
+
+<br>
 <br>
 
 <head>
@@ -21,9 +25,21 @@ allowfullscreen></iframe>
     <p>
         <input type="button" id="bt" value="Change Label Text" onclick="changeLabel()" />
     </p>
-    <label id="1">N/A</label>
+    <label id="lblEmp">1</label>
 </body>
+
+
+<!-- <img id="imgLoader1" src="C:\Users\19415\Pictures\From Phone 4.3.2021\Phone\DCIM\Screenshots\Screenshot_20200311-191145_WhatsApp.jpg" alt="Parliament Hill" height="430" width="200"> -->
+<img id="imgLoader1" alt="Parliament Hill" height="430" width="200">
+
+
+
+
 <script>
+
+	var picturePath = "C:\\Users\\19415\\Pictures\\From Phone 4.3.2021\\Phone\\DCIM\\Screenshots\\"
+
+
     function changeLabel() {
         let lbl = document.getElementById('lblEmp');
         let empName = document.getElementById('emp').value;
@@ -32,8 +48,44 @@ allowfullscreen></iframe>
     }
 
     function increaseLabel(){
-      let currentCount = document.getElementById('lblEmp');
+	
+	  var currentCount = document.getElementById('lblEmp').innerHTML;
+	
+	  let lbl = document.getElementById('lblEmp');
+
       currentCount++;
-      lbl.innerText = currentCount;
+
+      lbl.innerText = String(currentCount);
+
     }
+	
+	function loadBrittany(){
+	
+	  let currentSource = document.getElementById("imgLoader1").src
+	  var currentPictureFileName = ""
+	  var BrittanyPictureFileName = "Screenshot_20200311-191145_WhatsApp.jpg"
+	  var LucaPictureFileName = "Screenshot_20200307-163118_WhatsApp.jpg"
+
+	  if (currentSource.includes(BrittanyPictureFileName))
+	  {
+		var currentPictureFileName = LucaPictureFileName
+		btnLoadImage.value = "Load Brittany"
+	  } 
+	  else if (currentSource.includes(LucaPictureFileName))
+	  {
+		var currentPictureFileName = BrittanyPictureFileName
+		btnLoadImage.value = "Load Luca"
+	  } 
+	  else 
+	  {
+		var currentPictureFileName = BrittanyPictureFileName
+		btnLoadImage.value = "Load Luca"
+	  }
+	  
+
+	  document.getElementById("imgLoader1").src=picturePath + currentPictureFileName;
+	
+
+    }
+	
 </script>
