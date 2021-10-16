@@ -1,3 +1,5 @@
+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 <br> <br>
+
 "Hello KARINA"
 <button type="button" name="btnCounterIncrease">Counter Increase</button>
 
@@ -19,7 +21,7 @@ allowfullscreen></iframe>
     <p>
         <input type="button" id="bt" value="Change Label Text" onclick="changeLabel()" />
     </p>
-    <label id="lblEmp">N/A</label>
+    <label id="1">N/A</label>
 </body>
 <script>
     function changeLabel() {
@@ -27,5 +29,11 @@ allowfullscreen></iframe>
         let empName = document.getElementById('emp').value;
 
         lbl.innerText = empName;       // TREATS EVERY CONTENT AS TEXT.
+    }
+
+    function increaseLabel(){
+      let currentCount = document.getElementById('lblEmp');
+      currentCount++;
+      lbl.innerText = currentCount;
     }
 </script>
